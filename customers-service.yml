@@ -6,7 +6,19 @@ eureka:
   instance:
     # enable to register multiple app instances with a random server port
     instance-id: ${spring.application.name}:${random.uuid}
+    
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
 ---
 spring:
   config:
